@@ -167,8 +167,7 @@ img.icon-login:hover{
 }
 .textbox{
     display: flex;
-    border: 1px solid #666;
-    border-radius: 5px;
+    border-bottom: 1px solid #666;
     padding: 15px 0;
     margin: 15px 0;
     font-size: 20px;
