@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+<body>
+    <div class="gird wide row">
+        <div class="loginscreen col l-12 m-12 c-12">
+            <div class="form-box">
+                <div class="switch" id="switch">
+                    <div class="toggle-switch" onclick="this.classList.toggle('active')">
+                        <div class="inner-circle"></div>
+                    </div>
+                </div>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <div class="abc">
+                        <button type="button" class="toggle-btn" onclick="login()"><h5 class="btn">Đăng Nhập</h5></button>
+                        <button type="button" class="toggle-btn" onclick="register()"><h5 class="btn">Đăng Ký</h5></button>                    
+                    </div>
+                </div>
+    
+                <form id="login" class="input-group">
+                <div class="avatar-icons">
+                    <i class="avatar fa fa-user-circle" aria-hidden="true"></i>
+                </div>                
+                    <div class="textbox" id="ig_username">
+                        <i class="icon-login fa fa-user" aria-hidden="true"></i>
+                        <input type="text" class="input-field" id="username" placeholder="Tên tài khoản">                    
+                    </div>
+    
+                    <div class="textbox" id="ig_pasword">
+                        <i class="icon-login fa fa-lock" aria-hidden="true"></i>
+                     <input type="password" id="myInput" class="input-field2" id="pasword" placeholder="Mật khẩu">
+                     <span class="eye" onclick="myFunction()">
+                        <i id="hide1" class="fa fa-eye"></i>
+                        <i id="hide2" class="fa fa-eye-slash"></i>
+                     </span>                   
+                    </div>
+    
+                    <div class="textbox1">
+                        <div class="textbox3">
+                            <input type="checkbox" class="chech-box">
+                            <span class="remember-pass">Ghi nhớ mật khẩu</span>
+                        <a href="#" class="forgot-pass">Quên mật khẩu?</a>                        
+                        </div>
+                    </div>
+    
+                    <a href="#" type="submit" class="submit-btn"><span class="nod">Đăng Nhập</span></a>
+                    <div class="final-rought">
+                        <h4>Đăng nhập với tài khoản:</h4>
+                        <div class="social-icons">
+                            <a href="#" class="login-with">
+                                <img class="icon-login" src="facebook.png" alt="">
+                            </a>
+                            <a href="#" class="login-with">
+                                <img class="icon-login" src="google.png" alt="">
+                            </a>
+                            <a href="#" class="login-with">
+                                <img class="icon-login" src="twitter.png" alt="">
+                            </a>
+                        </div>
+                        <div class="copyright">
+                            <h5>This page was last edited by trieu on 21 March 2020, at 14:30 (VN).</h5>
+                        </div>
+                    </div>
+                </form>
+    
+                <form id="register" class="input-group">
+                    <div class="avatar-icons">
+                        <i class="avatar fa fa-info-circle" aria-hidden="true"></i>
+                    </div>
+    
+                    <div class="textbox" id="ig_emailname">
+                        <i class="icon-login fa fa-envelope" aria-hidden="true"></i>
+                     <input type="text" class="input-field" id="emailname" placeholder="Nhập Email">                   
+                    </div>
+    
+                    <div class="textbox" id="ig_username2">
+                        <i class="icon-login fa fa-user" aria-hidden="true"></i>
+                        <input type="text" class="input-field" id="username2" placeholder="Tên tài khoản">                    
+                    </div>                
+    
+                    <div class="textbox" id="ig_pasword2">
+                        <i class="icon-login fa fa-lock" aria-hidden="true"></i>
+                     <input type="text" class="input-field" id="pasword2" placeholder="Mật khẩu">                   
+                    </div>
+                    <div class="textbox1">
+                    <input type="checkbox" class="chech-box">
+                    <span class="remember-pass">Tôi đồng ý với <a href="#">điều khoản</a> & điều kiện</span>                    
+                    </div>
+    
+                    <a href="#" type="submit" class="submit-btn"><span class="nod">Đăng Ký</span></a>
+
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Chuyển trang giữa đăng nhập, đăng ký
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register(){
+            x.style.left = "-120%";
+            y.style.left = "10%";
+            z.style.left = "50%";
+        }
+        function login(){
+            x.style.left = "10%";
+            y.style.left = "120%";
+            z.style.left = "0px";
+        }
+
+        // Ẩn, Hiện mật khẩu khi đăng nhập
+        function myFunction(){
+            var x1 = document.getElementById("myInput");
+            var y2 = document.getElementById("hide1");
+            var z3 = document.getElementById("hide2");
+      
+            if(x1.type === 'password'){
+                x1.type = "text";
+                y2.style.display = "block";
+                z3.style.display = "none";
+            }
+            else{
+                x1.type = "password";
+                y2.style.display = "none";
+                z3.style.display = "block"; 
+            }
+        };
+    //Darkmode
+    let darkMode = localStorage.getItem('darkMode');
+    const darkModeToggle = document.querySelector('#switch');
+
+    const enableDarkMode = () => {
+        document.body.classList.add('darkmode');
+        localStorage.setItem('darkMode', 'enabled')
+    }
+
+    const disableDarkMode = () => {
+        document.body.classList.remove('darkmode');
+        localStorage.setItem('darkMode', null)
+    }
+
+    //tuy chinh load trang co darkmode khong
+    if(darkMode === 'enabled'){
+        enableDarkMode();
+    }
+
+    darkModeToggle.addEventListener('click', () =>{
+        darkMode = localStorage.getItem('darkMode')
+        if(darkMode !== 'enabled'){
+            enableDarkMode();
+        }
+        else{
+            disableDarkMode();
+        }
+    })
+
+
+    </script>
+</body>
+</html>
